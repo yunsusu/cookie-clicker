@@ -1,0 +1,18 @@
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex !important;
+}
+article:nth-child(1) {
+  background-color: rgb(255, 255, 192);
+  width: 30%;
+}
+article:nth-child(2) {
+  background-color: pink;
+  width: 40%;
+}
+article:nth-child(3) {
+  background-color: rgb(166, 119, 255);
+  width: 30%;
+  //   max-width: 30rem;
+}
