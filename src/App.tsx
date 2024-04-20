@@ -1,16 +1,12 @@
 import "./style.scss";
 import ScssExample from "./components/scss-example";
-import { useState } from "react";
+import useToggle from "./hooks/useToggle";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("");
+  const [isExPage, handleRoutePage] = useToggle(false);
 
-  const handleRouteEx = () => {
-    setCurrentPage("");
-  };
-
-  if (currentPage === "ex") {
-    return <ScssExample onRouteEx={handleRouteEx} />;
+  if (isExPage) {
+    return <ScssExample onRoutePage={handleRoutePage} />;
   }
 
   return (
@@ -21,7 +17,7 @@ function App() {
         <article>
           <button
             style={{ backgroundColor: "red", padding: "24px" }}
-            onClick={() => setCurrentPage("ex")}
+            onClick={handleRoutePage}
           >
             scss 예시 페이지로 이동
           </button>

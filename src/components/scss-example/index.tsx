@@ -3,11 +3,15 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-export default function ScssExample({ onRouteEx }: { onRouteEx: () => void }) {
+export default function ScssExample({
+  onRoutePage,
+}: {
+  onRoutePage: () => void;
+}) {
   const isSelected = true;
   return (
     <>
-      <button className={cx("button")} onClick={onRouteEx}>
+      <button className={cx("button")} onClick={onRoutePage}>
         원래 페이지로 이동하기
       </button>
       <div>
