@@ -28,13 +28,13 @@ function CookieClick() {
 
   return (
     <div className="wrap">
-      <Snowflakes count={moreCookie} />
       <div className="subTitle">지원의 제과점</div>
       <div className="mainTitle">
         {formatNumber(cookieCount)} 쿠키
         <span>초당 : {moreCookie}</span>
       </div>
       <img src={Cookie} className="clicker" onClick={clickCookie} />
+      <Snowflakes count={moreCookie} />
     </div>
   );
 }
