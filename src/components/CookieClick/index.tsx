@@ -2,6 +2,7 @@ import "./style.scss";
 import Cookie from "../../assets/img/cookie.webp";
 import { useEffect, useState } from "react";
 import useCookie from "../../stores/cookie.js";
+import Snowflakes from "./Snow.js";
 
 function CookieClick() {
   const { cookie, setCookie } = useCookie();
@@ -27,6 +28,7 @@ function CookieClick() {
 
   return (
     <div className="wrap">
+      <Snowflakes count={moreCookie} />
       <div className="subTitle">지원의 제과점</div>
       <div className="mainTitle">
         {formatNumber(cookieCount)} 쿠키
