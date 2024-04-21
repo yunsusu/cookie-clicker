@@ -3,10 +3,6 @@ import Cookie from "../../assets/img/cookie.webp";
 import { useEffect, useState } from "react";
 import useCookie from "../../stores/cookie.js";
 
-function formatNumber(number: number) {
-  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
 function CookieClick() {
   const { cookie, setCookie } = useCookie();
   const [cookieCount, setCookieCount] = useState<number>(cookie);
@@ -42,3 +38,7 @@ function CookieClick() {
 }
 
 export default CookieClick;
+
+function formatNumber(number: number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
