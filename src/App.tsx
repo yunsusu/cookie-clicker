@@ -1,6 +1,7 @@
 import "./style.scss";
 import ScssExample from "./components/scss-example";
 import useToggle from "./hooks/useToggle";
+import CookieClick from "./components/CookieClick";
 
 function App() {
   const [isExPage, handleRoutePage] = useToggle(false);
@@ -12,7 +13,9 @@ function App() {
   return (
     <>
       <main>
-        <article>윤수쓰 파트</article>
+        <article>
+          <CookieClick />
+        </article>
         <article>지수쓰 파트</article>
         <article>
           <button
