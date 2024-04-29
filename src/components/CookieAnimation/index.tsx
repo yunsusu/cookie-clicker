@@ -1,5 +1,5 @@
 function CookieAnimation() {
-  return <>dsf</>;
+  return <div className="midWrap">dsf</div>;
 }
 
 export default CookieAnimation;
