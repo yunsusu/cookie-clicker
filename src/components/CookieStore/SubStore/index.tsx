@@ -3,8 +3,8 @@ import cookie3 from "../../../assets/img/cookie3.webp";
 import cookie4 from "../../../assets/img/cookie4.webp";
 import cookie5 from "../../../assets/img/cookie5.webp";
 import cookie6 from "../../../assets/img/cookie6.webp";
-import useCookie from "../../../stores/cookie.js";
-import useSubStore from "../../../stores/storeSub.js";
+import useCookie from "../../../stores/cookie.ts";
+import useSubStore from "../../../stores/storeSub.ts";
 
 interface upgradeType {
   img: string;
@@ -12,10 +12,16 @@ interface upgradeType {
   count: number;
 }
 
+interface ImageBox {
+  [key: string]: string;
+}
+
 function SubStore() {
-  const { cookie, setCookie } = useCookie();
-  const { upgrade, increasePrice } = useSubStore();
-  const imagePaths = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { cookie, setCookie }: any = useCookie();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { upgrade, increasePrice }: any = useSubStore();
+  const imagePaths: ImageBox = {
     2: cookie2,
     3: cookie3,
     4: cookie4,

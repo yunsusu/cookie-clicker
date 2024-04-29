@@ -4,8 +4,8 @@ import jelly3 from "../../../assets/img/jelly3.webp";
 import jelly4 from "../../../assets/img/jelly4.png";
 import jelly5 from "../../../assets/img/jelly5.webp";
 import jelly6 from "../../../assets/img/jelly6.webp";
-import useCookie from "../../../stores/cookie.js";
-import useMoreAuto from "../../../stores/moreAuto.js";
+import useCookie from "../../../stores/cookie.ts";
+import useMoreAuto from "../../../stores/moreAuto.ts";
 
 interface upgradeType {
   img: string;
@@ -13,11 +13,17 @@ interface upgradeType {
   count: number;
 }
 
-function AutoStore() {
-  const { cookie, setCookie } = useCookie();
-  const { more, moreAuto } = useMoreAuto();
+interface ImageBox {
+  [key: string]: string;
+}
 
-  const imageBox = {
+function AutoStore() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { cookie, setCookie }: any = useCookie();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { more, moreAuto }: any = useMoreAuto();
+
+  const imageBox: ImageBox = {
     1: jelly1,
     2: jelly2,
     3: jelly3,
