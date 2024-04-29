@@ -1,0 +1,96 @@
+.storeWrap {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/img/storeBg.jpeg");
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: multiply;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+}
+
+.title {
+  width: 80%;
+  margin-top: 3rem;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 14px;
+  & span {
+    font-size: 15px;
+  }
+}
+
+.subWrap {
+  width: 100%;
+  //   height: 8rem;
+  background-color: peru;
+  display: flex;
+}
+
+.subItem {
+  max-width: 20%;
+  flex: 1;
+  background-color: bisque;
+  border: 3px solid brown;
+  cursor: pointer;
+  //   overflow: hidden;
+  & img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  & p {
+    text-align: center;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+  &:active img {
+    transform: scale(1);
+  }
+}
+
+.autoWrap {
+  width: 100%;
+  height: 8rem;
+  margin-top: 10rem;
+}
+
+.jelly {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+  overflow: hidden;
+  background-color: peru;
+  justify-content: space-between;
+  cursor: pointer;
+
+  & p {
+    font-size: 1.6rem;
+  }
+  & img {
+    width: 20%;
+    cursor: pointer;
+  }
+  &:hover img {
+    transform: scale(1.1);
+  }
+  &:active img {
+    transform: scale(1);
+  }
+}

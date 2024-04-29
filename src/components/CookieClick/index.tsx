@@ -2,17 +2,27 @@ import "./style.scss";
 import Cookie from "../../assets/img/cookie.webp";
 import { useEffect, useState } from "react";
 import useCookie from "../../stores/cookie.js";
+import useSubStore from "../../stores/storeSub.js";
+import useMoreAuto from "../../stores/moreAuto.js";
 import Snowflakes from "./Snow.js";
+
+interface upgradeType {
+  img: string;
+  price: number;
+  count: number;
+}
 
 function CookieClick() {
   const { cookie, setCookie } = useCookie();
+  const { upgrade } = useSubStore();
+  const { more } = useMoreAuto();
   const [cookieCount, setCookieCount] = useState<number>(cookie);
   const [moreCookie, setMoreCookie] = useState<number>(1);
   const [moreClick, setMoreClick] = useState<number>(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCookieCount(prevCount => prevCount + moreCookie);
+      setCookieCount(cookie + moreCookie);
     }, 1000);
 
     return () => clearInterval(interval);
@@ -26,6 +36,22 @@ function CookieClick() {
     setCookieCount(cookieCount + moreClick);
   };
 
+  useEffect(() => {
+    let count = 0;
+    upgrade.map((item: upgradeType, index: number) => {
+      count += item.count * (index + 1);
+    });
+    setMoreClick(count);
+  }, [upgrade]);
+
+  useEffect(() => {
+    let count = 0;
+    more.map((item: upgradeType, index: number) => {
+      count += item.count * (index + 1);
+    });
+    setMoreCookie(count);
+  }, [more]);
+
   return (
     <div className="wrap">
       {moreCookie > 100 ? (
@@ -33,11 +59,12 @@ function CookieClick() {
       ) : (
         <Snowflakes count={moreCookie / 2} />
       )}
-      <div className="subTitle">지원의 제과점</div>
-      <div className="mainTitle">
+      <h2 className="subTitle">지원의 제과점</h2>
+      <h2 className="mainTitle">
         {formatNumber(cookieCount)} 쿠키
         <span>초당 : {formatNumber(moreCookie)}</span>
-      </div>
+        <span>클릭당 : {formatNumber(moreClick)}</span>
+      </h2>
       <img src={Cookie} className="clicker" onClick={clickCookie} />
     </div>
   );

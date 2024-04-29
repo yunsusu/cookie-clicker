@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./Snowflakes.scss";
 import { generateRandomNumber } from "./math.ts";
 import IconSnow from "../../assets/img/cookie.webp";
