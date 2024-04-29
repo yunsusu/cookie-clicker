@@ -4,7 +4,7 @@ import { persist } from "zustand/middleware";
 const useCookie = create(
   persist(
     set => ({
-      cookie: "",
+      cookie: 0,
       setCookie: text => set({ cookie: text }),
     }),
     {
