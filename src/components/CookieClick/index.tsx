@@ -62,7 +62,7 @@ function CookieClick() {
       ) : (
         <Snowflakes count={moreCookie / 2} />
       )}
-      <h2 className="subTitle">지원의 제과점</h2>
+      <h2 className="subTitle">나의 제과점</h2>
       <h2 className="mainTitle">
         {formatNumber(cookieCount)} 쿠키
         <span>초당 : {formatNumber(moreCookie)}</span>
