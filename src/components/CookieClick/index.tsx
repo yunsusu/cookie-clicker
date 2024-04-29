@@ -20,8 +20,8 @@ function CookieClick() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { more }: any = useMoreAuto();
   const [cookieCount, setCookieCount] = useState<number>(cookie);
-  const [moreCookie, setMoreCookie] = useState<number>(1);
-  const [moreClick, setMoreClick] = useState<number>(1);
+  const [moreCookie, setMoreCookie] = useState<number>(0);
+  const [moreClick, setMoreClick] = useState<number>(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -40,7 +40,7 @@ function CookieClick() {
   };
 
   useEffect(() => {
-    let count = 0;
+    let count = 1;
     upgrade.map((item: upgradeType, index: number) => {
       count += item.count * (index + 1);
     });
@@ -48,7 +48,7 @@ function CookieClick() {
   }, [upgrade]);
 
   useEffect(() => {
-    let count = 0;
+    let count = 1;
     more.map((item: upgradeType, index: number) => {
       count += item.count * (index + 1);
     });
