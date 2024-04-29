@@ -1,5 +1,4 @@
 import "./style.scss";
-import useCookie from "../../stores/cookie.ts";
 import useSubStore from "../../stores/storeSub.ts";
 import useMoreAuto from "../../stores/moreAuto.ts";
 import cookie2 from "../../assets/img/cookie2.webp";
@@ -14,9 +13,11 @@ import jelly4 from "../../assets/img/jelly4.png";
 import jelly5 from "../../assets/img/jelly5.webp";
 import jelly6 from "../../assets/img/jelly6.webp";
 
+interface ImageBox {
+  [key: string]: string;
+}
+
 function CookieAnimation() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { cookie, setCookie }: any = useCookie();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { upgrade }: any = useSubStore();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
