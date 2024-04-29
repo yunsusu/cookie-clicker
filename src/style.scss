@@ -3,6 +3,7 @@ main {
   height: 100vh;
   display: flex !important;
 }
+
 article:nth-child(1) {
   width: 30%;
 }
@@ -16,4 +17,26 @@ article:nth-child(2) {
 article:nth-child(3) {
   width: 30%;
   //   max-width: 30rem;
+}
+
+@media all and (max-width: 768px) {
+  main {
+    overflow: scroll;
+  }
+  article {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  article:nth-child(1) > div {
+    width: 100vw;
+  }
+  article:nth-child(2) {
+    overflow: visible;
+  }
+  article:nth-child(2) > div {
+    width: 100vw;
+  }
+  article:nth-child(3) > div {
+    width: 100vw;
+  }
 }
