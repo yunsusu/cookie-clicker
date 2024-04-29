@@ -8,4 +8,62 @@
 .upgradeAni {
   width: 100%;
   display: flex;
+  & img {
+    width: 100%;
+  }
+}
+.imgWrap {
+  & p {
+    color: #fff;
+    text-align: center;
+  }
+}
+
+.moreAni {
+  //   margin-top: 1rem;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
+  & img {
+    width: 10%;
+  }
+}
+
+.moreWrap {
+  height: 10vh;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  overflow: scroll;
+  position: relative;
+
+  & p {
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+}
+
+.moreWrap:nth-child(1) {
+  background-image: url("../../assets/img/map1.webp");
+}
+.moreWrap:nth-child(2) {
+  background-image: url("../../assets/img/map2.webp");
+}
+.moreWrap:nth-child(3) {
+  background-image: url("../../assets/img/map3.webp");
+}
+.moreWrap:nth-child(4) {
+  background-image: url("../../assets/img/map1.webp");
+}
+.moreWrap:nth-child(5) {
+  background-image: url("../../assets/img/map2.webp");
+}
+.moreWrap:nth-child(6) {
+  background-image: url("../../assets/img/map3.webp");
 }
