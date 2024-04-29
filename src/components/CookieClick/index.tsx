@@ -1,9 +1,9 @@
 import "./style.scss";
 import Cookie from "../../assets/img/cookie.webp";
 import { useEffect, useState } from "react";
-import useCookie from "../../stores/cookie.js";
-import useSubStore from "../../stores/storeSub.js";
-import useMoreAuto from "../../stores/moreAuto.js";
+import useCookie from "../../stores/cookie.ts";
+import useSubStore from "../../stores/storeSub.ts";
+import useMoreAuto from "../../stores/moreAuto.ts";
 import Snowflakes from "./Snow.js";
 
 interface upgradeType {
@@ -13,9 +13,12 @@ interface upgradeType {
 }
 
 function CookieClick() {
-  const { cookie, setCookie } = useCookie();
-  const { upgrade } = useSubStore();
-  const { more } = useMoreAuto();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { cookie, setCookie }: any = useCookie();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { upgrade }: any = useSubStore();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { more }: any = useMoreAuto();
   const [cookieCount, setCookieCount] = useState<number>(cookie);
   const [moreCookie, setMoreCookie] = useState<number>(1);
   const [moreClick, setMoreClick] = useState<number>(1);
