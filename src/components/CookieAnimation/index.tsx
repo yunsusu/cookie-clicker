@@ -60,14 +60,18 @@ function CookieAnimation() {
       </div>
 
       <div className="moreAni">
-        {more.map((item, index) => (
-          <div key={index} className="moreWrap">
-            {Array.from({ length: item.count }, (_, i) => (
-              <img src={imageBox[item.img]} alt="젤리" key={i} />
-            ))}
-            <p>{item.count}</p>
-          </div>
-        ))}
+        {more.map((item, index) => {
+          return (
+            item.count > 0 && (
+              <div key={index} className="moreWrap">
+                {Array.from({ length: item.count }, (_, i) => (
+                  <img src={imageBox[item.img]} alt="젤리" key={i} />
+                ))}
+                <p>{item.count}</p>
+              </div>
+            )
+          );
+        })}
       </div>
     </>
   );
