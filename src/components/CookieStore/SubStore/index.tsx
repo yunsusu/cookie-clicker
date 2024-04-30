@@ -40,7 +40,7 @@ function SubStore() {
     <div className="subWrap">
       {upgrade.map((item: upgradeType, index: number) => (
         <div
-          className="subItem"
+          className={`subItem${cookie < item.price ? ` disable` : ""}`}
           key={index}
           onClick={() => clickUpgrade(index)}
         >
