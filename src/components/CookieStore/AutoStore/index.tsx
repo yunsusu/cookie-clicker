@@ -1,3 +1,4 @@
+import { useState } from "react";
 import jelly1 from "../../../assets/img/jelly1.webp";
 import jelly2 from "../../../assets/img/jelly2.webp";
 import jelly3 from "../../../assets/img/jelly3.webp";
@@ -22,6 +23,7 @@ function AutoStore() {
   const { cookie, setCookie }: any = useCookie();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { more, moreAuto }: any = useMoreAuto();
+  const [count, setCount] = useState<number>(1);
 
   const imageBox: ImageBox = {
     1: jelly1,
@@ -34,13 +36,25 @@ function AutoStore() {
 
   const handleClick = (index: number) => {
     if (cookie >= more[index].price) {
-      moreAuto(index);
+      moreAuto(index, count);
       setCookie(cookie - more[index].price);
     }
   };
 
   return (
     <div className="autoWrap">
+      <div className="countWrap">
+        <div
+          className="upDown"
+          onClick={() => count > 1 && setCount(count - 1)}
+        >
+          -
+        </div>
+        {count}
+        <div className="upDown" onClick={() => setCount(count + 1)}>
+          +
+        </div>
+      </div>
       {more.map((item: upgradeType, index) => (
         <div className="jelly" key={index} onClick={() => handleClick(index)}>
           <img src={imageBox[item.img]} alt="젤리" />
