@@ -12,22 +12,22 @@ const useSubStore = create(
         },
         {
           img: "3",
-          price: 100,
+          price: 150,
           count: 0,
         },
         {
           img: "4",
-          price: 100,
+          price: 200,
           count: 0,
         },
         {
           img: "5",
-          price: 100,
+          price: 250,
           count: 0,
         },
         {
           img: "6",
-          price: 100,
+          price: 300,
           count: 0,
         },
       ],
@@ -35,7 +35,11 @@ const useSubStore = create(
         set(state => ({
           upgrade: state.upgrade.map((item, idx) =>
             idx === index
-              ? { ...item, price: item.price + 100, count: item.count + 1 }
+              ? {
+                  ...item,
+                  price: item.price + 100 * item.img,
+                  count: item.count + 1,
+                }
               : item,
           ),
         })),
