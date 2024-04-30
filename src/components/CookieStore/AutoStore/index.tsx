@@ -57,9 +57,13 @@ function AutoStore() {
       </div>
       {more.map((item: upgradeType, index) => (
         <div
-          className={`jelly${cookie < item.price ? ` disable` : ""}`}
+          className={`jelly${cookie < item.price * count ? ` disable` : ""}`}
           key={index}
-          onClick={() => handleClick(index)}
+          onClick={() => {
+            if (cookie >= item.price * count) {
+              handleClick(index);
+            }
+          }}
         >
           <img src={imageBox[item.img]} alt="젤리" />
           <p>{item.price}</p>

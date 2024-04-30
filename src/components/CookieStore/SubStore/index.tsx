@@ -42,7 +42,11 @@ function SubStore() {
         <div
           className={`subItem${cookie < item.price ? ` disable` : ""}`}
           key={index}
-          onClick={() => clickUpgrade(index)}
+          onClick={() => {
+            if (cookie >= item.price) {
+              clickUpgrade(index);
+            }
+          }}
         >
           <img src={imagePaths[item.img]} alt={`쿠키 이미지`} />
           <p>{item.price} 쿠키</p>
