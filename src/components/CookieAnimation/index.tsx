@@ -65,7 +65,21 @@ function CookieAnimation() {
             item.count > 0 && (
               <div key={index} className="moreWrap">
                 {Array.from({ length: item.count }, (_, i) => (
-                  <img src={imageBox[item.img]} alt="젤리" key={i} />
+                  <img
+                    src={imageBox[item.img]}
+                    alt="젤리"
+                    key={i}
+                    style={{
+                      top: `${Math.floor(Math.random() * 50)}%`,
+
+                      animationDelay: `${Math.random() * 10}s, ${
+                        Math.random() * 10
+                      }s`,
+                      WebkitAnimationDelay: `${Math.random() * 10}s, ${
+                        Math.random() * 10
+                      }s`,
+                    }}
+                  />
                 ))}
                 <p>{item.count}</p>
               </div>
