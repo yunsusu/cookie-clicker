@@ -1,3 +1,23 @@
+.midTop {
+  width: 100%;
+  height: 8rem;
+  background-color: rgba($color: #ae8c8c, $alpha: 1);
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  font-size: 2rem;
+  & p {
+    padding: 2rem;
+    font-size: 2.5rem;
+  }
+  & button {
+    padding: 1rem;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    border-radius: 12px;
+    color: #fff;
+  }
+}
 .midWrap {
   width: 100%;
   //   height: 8rem;

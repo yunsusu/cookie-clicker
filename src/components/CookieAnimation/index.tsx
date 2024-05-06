@@ -12,6 +12,7 @@ import jelly3 from "../../assets/img/jelly3.webp";
 import jelly4 from "../../assets/img/jelly4.png";
 import jelly5 from "../../assets/img/jelly5.webp";
 import jelly6 from "../../assets/img/jelly6.webp";
+import MidTop from "./MidTop.tsx";
 
 interface ImageBox {
   [key: string]: string;
@@ -42,6 +43,7 @@ function CookieAnimation() {
 
   return (
     <>
+      <MidTop />
       <div className="midWrap">
         <div className="upgradeAni">
           {upgrade.map((item, index) => {
