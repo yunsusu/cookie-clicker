@@ -5,10 +5,13 @@ function MidTop() {
   const { setCookie }: any = useCookie();
 
   const handleReset = () => {
-    setCookie(0);
-    window.localStorage.removeItem("cookie-substore");
-    window.localStorage.removeItem("cookie-moreAuto");
-    window.location.reload();
+    const con = confirm("초기화 하시겠습니까?");
+    if (con === true) {
+      setCookie(0);
+      window.localStorage.removeItem("cookie-substore");
+      window.localStorage.removeItem("cookie-moreAuto");
+      window.location.reload();
+    }
   };
 
   return (
